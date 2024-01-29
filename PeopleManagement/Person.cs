@@ -14,5 +14,9 @@
             Surname = surname;
             DateOfBirth = dateOfBirth;
         }
+        public virtual string ShowInfo()
+        {
+            return $"{Name} {Surname} {DateOfBirth.Date.ToString("yyyy/MM/dd")}";
+        }
     }
 }
