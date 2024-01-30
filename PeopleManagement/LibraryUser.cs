@@ -8,16 +8,20 @@ namespace PeopleManagement
 {
     public class LibraryUser : Person
     {
-        public byte LibraryCardNumber { get; set; }
+        public string LibraryCardNumber { get; set; }
         public DateTime DateOfIssue { get; set; }
-        public double MonthlyLibraryFee { get; set; }
+        public int MonthlyLibraryFee { get; set; }
 
-        public LibraryUser(string name, string surname, DateTime dateOfBirth, byte libraryCardNumber, DateTime dateOfIssue,
-            double monthlyLibraryFee) : base(name, surname, dateOfBirth)
+        public LibraryUser(string name, string surname, DateTime dateOfBirth, string libraryCardNumber, DateTime dateOfIssue,
+            int monthlyLibraryFee) : base(name, surname, dateOfBirth)
         {
             LibraryCardNumber = libraryCardNumber;
             DateOfIssue = dateOfIssue;
             MonthlyLibraryFee = monthlyLibraryFee;
+        }
+        public override string ShowInfo()
+        {
+            return $"{Name} {Surname} {DateOfBirth.Date.ToString("yyyy/MM/dd")} {LibraryCardNumber} {DateOfIssue.Date.ToString("yyyy/MM/dd")} {MonthlyLibraryFee}";
         }
     }
 }

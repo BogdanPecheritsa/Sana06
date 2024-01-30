@@ -19,5 +19,9 @@ namespace PeopleManagement
             Department = department;
             HigherEducationInstitution = higherEducationInstitution;
         }
+        public override string ShowInfo()
+        {
+            return $"{Name} {Surname} {DateOfBirth.Date.ToString("yyyy/MM/dd")} {Position} {Department} {HigherEducationInstitution}";
+        }
     }
 }

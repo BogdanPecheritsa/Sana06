@@ -19,5 +19,9 @@ namespace PeopleManagement
             EducationPoints = educationPoints;
             EducationInstitutionName = educationInstitutionName;
         }
+        public override string ShowInfo()
+        {
+            return $"{Name} {Surname} {DateOfBirth.Date.ToString("yyyy/MM/dd")} {ZnoPoints} {EducationPoints} {EducationInstitutionName}";
+        }
     }
 }
